@@ -19,6 +19,7 @@ BuildRequires:	sfml-graphics-devel
 BuildRequires:	sfml-system-devel
 BuildRequires:	sfml-window-devel
 BuildRequires:	mesaglu-devel
+BuildRequires:	png-devel
 %rename		%{oname}
 
 %description
