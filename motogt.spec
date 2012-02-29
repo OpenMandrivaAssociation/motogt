@@ -13,6 +13,7 @@ Source3:	MotoGT.png
 Patch0:		motogt-makefile.patch
 Patch1:		motogt-savedir.patch
 Patch2:		motogt-init.patch
+Patch3:		motogt-png15.patch
 BuildRequires:	sfml-audio-devel
 BuildRequires:	sfml-graphics-devel
 BuildRequires:	sfml-system-devel
@@ -28,9 +29,10 @@ If you win championships, you can also unlock hidden features.
 
 %prep
 %setup -q -n %{oname}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch0 -p1 -b .makefile~
+%patch1 -p1 -b .savedir~
+%patch2 -p1 -b .init~
+%patch3 -p1 -b .png15~
 
 %build
 %setup_compile_flags
