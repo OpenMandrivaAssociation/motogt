@@ -3,7 +3,7 @@
 Name:		motogt
 Version:	20110505
 Release:	%mkrel 1
-Summary:	MotoGT is a free motorcycle racing game.
+Summary:	MotoGT is a free motorcycle racing game
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://motogt.sourceforge.net/
@@ -20,9 +20,9 @@ BuildRequires:	sfml-window-devel
 %rename		%{oname}
 
 %description
-MotoGT is 2D top-viewed game where you drive a MotoGP bike, and you want to win races. 
-In career mode you start with a regular bike, but when you win races you get experience, 
-and experience let's you improve your bike.
+MotoGT is 2D top-viewed game where you drive a MotoGP bike, and you want
+to win races. In career mode you start with a regular bike, but when you
+win races you get experience, and experience let's you improve your bike.
 If you win championships, you can also unlock hidden features.
 
 %prep
