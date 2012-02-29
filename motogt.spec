@@ -17,6 +17,7 @@ BuildRequires:	sfml-audio-devel
 BuildRequires:	sfml-graphics-devel
 BuildRequires:	sfml-system-devel
 BuildRequires:	sfml-window-devel
+BuildRequires:	mesaglu-devel
 %rename		%{oname}
 
 %description
