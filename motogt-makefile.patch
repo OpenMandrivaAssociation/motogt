@@ -1,0 +1,22 @@
+diff -urN MotoGT/src/Makefile.lnx MotoGT-patched/src/Makefile.lnx
+--- MotoGT/src/Makefile.lnx	2011-01-11 03:54:57.000000000 +1000
++++ MotoGT-patched/src/Makefile.lnx	2012-03-01 04:22:17.646310088 +1100
+@@ -1,7 +1,7 @@
+ GPP=g++
+ GCC=gcc
+-FLAGS= -O2 -ffast-math
+-LIBS= -s -lpng -lsfml-window -lsfml-graphics -lsfml-system -lsfml-audio  
++FLAGS= ${CFLAGS} ${LDFLAGS}
++LIBS= -lpng -lsfml-window -lsfml-graphics -lsfml-system -lsfml-audio -lGL
+ TEMP_DIR=../tmp-lnx
+ 
+ all: ${TEMP_DIR} ../MotoGT.bin
+@@ -12,7 +12,7 @@
+ 	rm -rf ${OBJS} ../MotoGT.bin
+ 
+ ../MotoGT.bin: ${OBJS}
+-	${GPP} ${OBJS} ${LIBS} -o $@
++	${GPP} ${OBJS} ${LDFLAGS} ${LIBS} -o $@
+ 
+ ${TEMP_DIR}:
+ 	mkdir ${TEMP_DIR}
