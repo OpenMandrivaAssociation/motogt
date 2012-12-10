@@ -2,7 +2,7 @@
 
 Name:		motogt
 Version:	20110505
-Release:	%mkrel 1
+Release:	3
 Summary:	MotoGT is a free motorcycle racing game
 License:	GPLv2+
 Group:		Games/Arcade
@@ -18,8 +18,7 @@ BuildRequires:	sfml-audio-devel
 BuildRequires:	sfml-graphics-devel
 BuildRequires:	sfml-system-devel
 BuildRequires:	sfml-window-devel
-BuildRequires:	mesaglu-devel
-BuildRequires:	png-devel
+BuildRequires:	pkgconfig(glu)
 %rename		%{oname}
 
 %description
@@ -40,27 +39,26 @@ If you win championships, you can also unlock hidden features.
 %make
 
 %install
-%__rm -rf %{buildroot}
-%__mkdir_p %{buildroot}%{_libdir}/%{oname}
-%__mkdir_p %{buildroot}%{_datadir}/applications
-%__mkdir_p %{buildroot}%{_iconsdir}
-%__install -Dm 755 %{oname}.bin -D %{buildroot}%{_libdir}/%{oname}/
-%__install -Dm 644 %{SOURCE2} -D %{buildroot}%{_datadir}/applications/
-%__install -Dm 644 %{SOURCE3} -D %{buildroot}%{_iconsdir}/
-%__cp -rf data %{buildroot}%{_libdir}/%{oname}
-%__cp -rf data_low %{buildroot}%{_libdir}/%{oname}
-%__cp -rf doc %{buildroot}%{_libdir}/%{oname}
+mkdir -p %{buildroot}%{_libdir}/%{oname}
+mkdir -p %{buildroot}%{_datadir}/applications
+mkdir -p %{buildroot}%{_iconsdir}
+install -Dm 755 %{oname}.bin -D %{buildroot}%{_libdir}/%{oname}/
+install -Dm 644 %{SOURCE2} -D %{buildroot}%{_datadir}/applications/
+install -Dm 644 %{SOURCE3} -D %{buildroot}%{_iconsdir}/
+cp -rf data %{buildroot}%{_libdir}/%{oname}
+cp -rf data_low %{buildroot}%{_libdir}/%{oname}
+cp -rf doc %{buildroot}%{_libdir}/%{oname}
 
-%__mkdir_p %{buildroot}%{_bindir}
-%__cat > %{buildroot}%{_bindir}/%{name} << EOF
+# 32 bit binary linked against old libs
+rm -f %{buildroot}%{_libdir}/%{oname}/data/src/bikes/hue.bin
+
+mkdir -p %{buildroot}%{_bindir}
+cat > %{buildroot}%{_bindir}/%{name} << EOF
 #!/bin/bash
 pushd %{_libdir}/%{oname}
 ./%{oname}.bin
 popd
 EOF
-
-%clean
-%__rm -rf %{buildroot}
 
 %files
 %defattr(644,root,root,755)
@@ -71,4 +69,11 @@ EOF
 %{_libdir}/%{oname}/doc
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/%{oname}.png
+
+
+%changelog
+* Wed Feb 29 2012 Andrey Bondrov <abondrov@mandriva.org> 20110505-1mdv2011.0
++ Revision: 781446
+- Update patches
+- imported package motogt
 

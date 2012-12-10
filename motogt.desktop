@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=MotoGT
+Comment=A free motorcycle racing game
+Icon=MotoGT
+Exec=/usr/bin/motogt
+Categories=Game;SportsGame;
+StartupNotify=false
+Terminal=false
