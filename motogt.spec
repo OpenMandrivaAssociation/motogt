@@ -3,7 +3,7 @@
 Name:		motogt
 Version:	20110505
 Release:	3
-Summary:	MotoGT is a free motorcycle racing game
+Summary:	Free motorcycle racing game
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://motogt.sourceforge.net/
