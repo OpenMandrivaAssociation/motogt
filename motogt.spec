@@ -6,7 +6,7 @@ Release:	5
 Summary:	Free motorcycle racing game
 License:	GPLv2+
 Group:		Games/Arcade
-Url:		http://motogt.sourceforge.net/
+Url:		https://motogt.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/motogt/%{oname}-%{version}.zip
 Source2:	motogt.desktop
 Source3:	MotoGT.png
