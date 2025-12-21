@@ -14,6 +14,7 @@ Patch0:		motogt-makefile.patch
 Patch1:		motogt-savedir.patch
 Patch2:		motogt-init.patch
 Patch3:		motogt-png15.patch
+BuildRequires:	make
 BuildRequires:	sfml-audio-devel
 BuildRequires:	sfml-graphics-devel
 BuildRequires:	sfml-system-devel
